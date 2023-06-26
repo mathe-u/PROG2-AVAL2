@@ -1,5 +1,6 @@
-import 'package:diglib/diglib.dart' as diglib;
+import 'package:diglib/media.dart';
 
-void main(List<String> arguments) {
-  print('Hello world: ${diglib.calculate()}!');
+void main() {
+  print("a");
+  print(MediaType.movie.type);
 }
