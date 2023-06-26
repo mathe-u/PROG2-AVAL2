@@ -34,5 +34,5 @@ void main() {
   print('DURAÇÂO TOTAL: $totalDuration min\n');
 
   // ESTA LINHA PODE SER ALTERADA
-  print('AUTORES: Fulano e Cicrano');
+  print('AUTORES: Matheus Silva e João Pedro');
 }
