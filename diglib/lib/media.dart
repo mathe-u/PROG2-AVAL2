@@ -1,10 +1,11 @@
 enum MediaType {
-  movie('filme'),
-  book('livro'),
-  music('musica');
+  movie("filme"),
+  book("livro"),
+  music("música");
 
-  const MediaType(this.name);
-  final String name;
+  final String type;
+
+  const MediaType(this.type);
 }
 
 abstract class Media {
