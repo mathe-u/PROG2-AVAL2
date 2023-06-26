@@ -12,8 +12,8 @@ class DigitalLibrary {
     storage.add(media);
   }
 
-  String loadMedia([Media? mediaType]) {
-    final file = File('./media.json');
+  String loadMedia(String path) {
+    final file = File(path);
     final contents = file.readAsStringSync();
     return json.decode(contents);
   }
@@ -21,21 +21,18 @@ class DigitalLibrary {
   List<String> listMedia([Media? mediaType]) {
     List<String> list = [];
 
-    if(mediaType == null){
-      for(Media media in storage){
+    if(mediaType == null) {
+      for(Media media in storage) {
         list.add("${media.type} ${media.title} ${media.name} ${media.duration}");
       }
-    }else{
-      for(Media media in storage){
+    } else {
+      for(Media media in storage) {
         if (media.type == mediaType.type) {
           list.add("${media.type} ${media.title} ${media.name} ${media.duration}");
         }
       }
     }
-
     return list;
-
-    }
   }
 
   int totalMediaDuration([Media? mediaType]) {
@@ -55,3 +52,4 @@ class DigitalLibrary {
     return total;
   }
 }
+
