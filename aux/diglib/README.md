@@ -1,2 +1,0 @@
-# Matheus Silva
-# João Pedro
