@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'dart:convert';
-import 'package:diglib/media.dart';
+import './media.dart';
 
 class DigitalLibrary {
   DigitalLibrary();
