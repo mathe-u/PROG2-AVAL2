@@ -1,19 +1,25 @@
 import 'dart:io';
 import 'dart:convert';
 import './media.dart';
+import './music.dart';
 
 class DigitalLibrary {
   DigitalLibrary();
+  
   List<Media> storage = [];
 
   void addMedia(Media media) {
     storage.add(media);
   }
 
-  List<dynamic> loadMedia(String path) {
-    final file = File(path);
-    final contents = file.readAsStringSync();
-    return json.decode(contents);
+  void loadMedia(String path) {
+    storage.clear();
+    final jsonContent = json.decode(File(path).readAsStringSync());
+    for (Map item in jsonContent) {
+      if (item["type"] == "música") {
+        addMedia(Music(item["type"], item["title"], item["duration"], item["name"]));
+      }
+    }
   }
 
   List<String> listMedia([MediaType? mediaType]) {
