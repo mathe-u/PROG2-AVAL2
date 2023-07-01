@@ -1,6 +1,9 @@
-import 'package:diglib/media.dart';
+import 'dart:convert';
+import 'dart:io';
 
 void main() {
-  print("a");
-  print(MediaType.movie.type);
+  final jsonFile = json.decode(File("./data/media.json").readAsStringSync());
+  for (var jsonItem in jsonFile) {
+    print("${jsonItem["type"]}\t${jsonItem["title"]}\t${jsonItem["name"]}\t${jsonItem["duration"]}");
+  }
 }
