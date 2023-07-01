@@ -5,9 +5,9 @@ class Music extends Media {
 
   Music(
     super.type,
-   super.title,
-   super.duration,
-   this.artist
+    super.title,
+    super.duration,
+    this.artist
    );
 
   @override
