@@ -45,7 +45,7 @@ class DigitalLibrary {
 
   int totalMediaDuration([MediaType? mediaType]) {
     int total = 0;
-    List<Media> storage = [];
+    
     if (mediaType == null) {
       for (Media media in storage) {
         total += media.duration;
