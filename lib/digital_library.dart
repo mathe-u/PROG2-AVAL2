@@ -45,11 +45,9 @@ class DigitalLibrary {
 
   int totalMediaDuration([MediaType? mediaType]) {
     int total = 0;
-    
+
     if (mediaType == null) {
-      for (Media media in storage) {
-        total += media.duration;
-      }
+      total = storage.fold(0, (t, Media media) => t + media.duration);
     } else {
       for (Media media in storage) {
         if (media.type == mediaType) {
