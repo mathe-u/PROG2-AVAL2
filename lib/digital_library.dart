@@ -49,11 +49,12 @@ class DigitalLibrary {
     if (mediaType == null) {
       total = storage.fold(0, (t, Media media) => t + media.duration);
     } else {
-      for (Media media in storage) {
+      total = storage.where((Media media) => media.type == mediaType).fold(0, (t, Media media) => t + media.duration);
+      /*for (Media media in storage) {
         if (media.type == mediaType) {
           total += media.duration;
         }
-      }
+      }*/
     }
     return total;
   }
